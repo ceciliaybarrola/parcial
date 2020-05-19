@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1589505388 source:c:\users\user1\desktop\facultad\parcial_laboratorio_parte_1\inputs.c
+	"Inputs.h"
+
+1589489929 c:\users\user1\desktop\facultad\parcial_laboratorio_parte_1\inputs.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
+1589652051 source:c:\users\user1\desktop\facultad\parcial_laboratorio_parte_1\clientes.c
+	"Clientes.h"
+
+1589651583 c:\users\user1\desktop\facultad\parcial_laboratorio_parte_1\clientes.h
+	<string.h>
+	"Inputs.h"
+
+1589652230 source:c:\users\user1\desktop\facultad\parcial_laboratorio_parte_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Inputs.h"
+	"Mascotas_Clientes.h"
+
+1589640419 c:\users\user1\desktop\facultad\parcial_laboratorio_parte_1\mascotas.h
+	<string.h>
+	"Inputs.h"
+
+1589652051 source:c:\users\user1\desktop\facultad\parcial_laboratorio_parte_1\mascotas.c
+	"Mascotas.h"
+
+1589641844 c:\users\user1\desktop\facultad\parcial_laboratorio_parte_1\mascotas_clientes.h
+	"Mascotas.h"
+	"Clientes.h"
+
+1589652189 source:c:\users\user1\desktop\facultad\parcial_laboratorio_parte_1\mascotas_clientes.c
+	"Mascotas_Clientes.h"
+
+1589890048 source:c:\users\user1\desktop\parcial_laboratorio_parte_1\clientes.c
+	"Clientes.h"
+
+1589851255 c:\users\user1\desktop\parcial_laboratorio_parte_1\clientes.h
+	<string.h>
+	"Inputs.h"
+
+1589489929 c:\users\user1\desktop\parcial_laboratorio_parte_1\inputs.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
+1589653403 source:c:\users\user1\desktop\parcial_laboratorio_parte_1\inputs.c
+	"Inputs.h"
+
+1589890642 source:c:\users\user1\desktop\parcial_laboratorio_parte_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Inputs.h"
+	"Mascotas_Clientes.h"
+
+1589890595 c:\users\user1\desktop\parcial_laboratorio_parte_1\mascotas_clientes.h
+	"Mascotas.h"
+	"Clientes.h"
+
+1589889399 c:\users\user1\desktop\parcial_laboratorio_parte_1\mascotas.h
+	<string.h>
+	"Inputs.h"
+
+1589890595 source:c:\users\user1\desktop\parcial_laboratorio_parte_1\mascotas.c
+	"Mascotas.h"
+
+1589890595 source:c:\users\user1\desktop\parcial_laboratorio_parte_1\mascotas_clientes.c
+	"Mascotas_Clientes.h"
+
