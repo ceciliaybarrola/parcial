@@ -21,3 +21,5 @@ void MostrarMascotaSegunTipo(eTipoMascota listadoTipo[], int tamTipo, eClientes 
 void OrdenarClientesPorCantidadDeMascotas(eClientes clientes[], int tamClientes, eMascota mascotas[], int tamMascotas);
 void OrdenarClientesPorCantidadDeMascotas_Nombre(eClientes clientes[], int tamClientes, eMascota mascotas[], int tamMascotas);
 void MostrarListadoClientes_CantidadMascotas(eClientesMascotas auxClientesMascotas[],eClientes clientes[], int tam);
+int ModificarMascota(eMascota mascotas[], int tam, eClientes clientes[], int tamClientes);
+void MostrarDueniosConMascotasDelMismoSexo(eMascota mascotas[], int tam, eClientes clientes[], int tamClientes);

@@ -80,8 +80,8 @@ int AltaMascota(eMascota mascotas[], int tamMascota, eClientes clientes[],int ta
     int ret=1;
     int id;
     int retId;
-    int auxRaza;
-    int flag=0;
+    //int auxRaza;
+    //int flag=0;
     int j;
     index=BuscarLibreMascota(mascotas, tamMascota);
 
@@ -121,6 +121,7 @@ int AltaMascota(eMascota mascotas[], int tamMascota, eClientes clientes[],int ta
         mascotas[index].raza=GetUnsignedInt("Ingrese ID raza: ","ERROR! no es un valor disponible, reingrese: ");
 
         /*do{
+                auxRaza=GetUnsignedInt("Ingrese ID raza: ","ERROR! no es un valor disponible, reingrese: ");
                 for(j=0; j<tamRaza;j++)
                 {
                     if((raza[j].idTipo == mascotas[index].tipo) && (raza[j].idRaza == auxRaza))
@@ -248,7 +249,7 @@ void MostrarMascotasConMasDeTresAnios(eClientes cliente[], int tamCliente, eMasc
             {
                 if(cliente[j].idCliente==mascota[i].idCliente)
                 {
-                    printf(" %20s %8d %20s %8d %8.2f %5c %5d %20s\n", mascota[i].nombre,mascota[i].tipo, mascota[i].raza,mascota[i].edad,mascota[i].peso,mascota[i].sexo,mascota[i].idMascota, cliente[j].nombre);
+                    printf(" %20s %8d %20d %8d %8.2f %5c %5d %20s\n", mascota[i].nombre,mascota[i].tipo, mascota[i].raza,mascota[i].edad,mascota[i].peso,mascota[i].sexo,mascota[i].idMascota, cliente[j].nombre);
 
                 }
             }
@@ -395,3 +396,152 @@ void MostrarListadoClientes_CantidadMascotas(eClientesMascotas auxClientesMascot
      printf("*****************************************************************************************************************CANTIDAD\n");
 
 }
+int ModificarMascota(eMascota mascotas[], int tam, eClientes clientes[], int tamClientes)
+{
+    int id;
+    int i;
+    int ret=1;
+    int opcion;
+    char confirmacion[100];
+
+    char nombre[100];
+    int tipo;
+    int raza;
+    int edad;
+    float peso;
+    char sexo;
+    int idCliente;
+    int retId;
+
+
+    id=GetUnsignedInt("ingrese Id a modificar: ","No es un valor disponnible, reingrese por favor: ");
+
+    i=BuscarMascotaPorId(mascotas, tam, id);
+
+    if(i==-1)
+    {
+        ret=0;
+
+    }else{
+        strcpy(nombre, mascotas[i].nombre);
+        tipo=mascotas[i].tipo;
+        raza= mascotas[i].raza;
+        edad=mascotas[i].edad;
+        peso=mascotas[i].peso;
+        sexo=mascotas[i].sexo;
+        idCliente=mascotas[i].idCliente;
+
+        do{
+          printf("MENU DE MODIFICACIONES\n1.Nombre\n2.Tipo\n3.Raza\n4.Edad\n5.Peso\n6.Sexo\n7.duenio\n8.EXIT\n ");
+          opcion=GetInt("Ingrese una opcion: ","ERROR! Ingrese una opcion valida: ",1 , 7);
+
+          switch(opcion)
+          {
+            case 1:
+                getString(nombre, "Ingrese nuevo nombre de la mascota: ", "ERROR! Ingrese nuevo nombre de la mascota: ");
+                break;
+            case 2:
+                tipo=GetInt("TIPOS DE MASCOTAS\n1.gato\n2.perro\n3.raro\nIngrese nuevo tipo: ","ERROR! Reingrese el tipo: ",1,3);
+                break;
+            case 3:
+                raza=GetInt("Ingrese nueva raza de la mascota: ","ERROR! Ingrese nueva raza de la mascota: ",10, 15);
+                break;
+            case 4:
+                edad=GetInt("Ingrese nueva edad: ","ERROR! Reingrese la edad: ", 0, 200);
+                break;
+            case 5:
+                peso=GetFloat("Ingrese nuevo peso: ", "ERROR! Reingrese el nuevo peso: ", 0.0, 200.0);
+                break;
+            case 6:
+                sexo=getChar("Ingrese nuevo sexo 'f' o 'm': ","No es una opcion disponible, reingrese nuevo sexo 'f' o 'm': ", 'f','m' );
+                break;
+            case 7:
+                MostrarListadoClientes(clientes, tamClientes);
+                 do{
+                        idCliente=GetUnsignedInt("Ingrese id duenio: ","ERROR! Reingrese id del duenio: ");
+                        retId=BuscarClientePorId(clientes, tamClientes, idCliente);
+                        if(retId==-1)
+                        {
+                            printf("No se encontro el id del duenio, reingrese por favor \n");
+                        }else{
+                            mascotas[i].idCliente=idCliente;
+                        }
+
+                    }while(retId==-1);
+                break;
+            case 8:
+                getString(confirmacion,"Desea realmente modificar los datos? ","ERROR! Desea realmente modificar los datos? ");
+                if(stricmp(confirmacion,"si")==0)
+                {
+                    strcpy(mascotas[i].nombre, nombre);
+                    mascotas[i].tipo=tipo;
+                    mascotas[i].raza= raza;
+                    mascotas[i].edad=edad;
+                    mascotas[i].peso=peso;
+                    mascotas[i].sexo=sexo;
+                    mascotas[i].idCliente=idCliente;
+
+                }else{
+                    ret=-1;
+                }
+                break;
+          }
+          system ("pause");
+          system("cls");
+
+        }while(opcion!=7);
+
+    }
+    return ret;
+}
+void MostrarDueniosConMascotasDelMismoSexo(eMascota mascotas[], int tam, eClientes clientes[], int tamClientes)
+{
+    int i;
+    int j;
+    int contador;
+    int contadorF;
+    int contadorM;
+    for(i=0;i<tamClientes;i++)
+    {
+        if(clientes[i].estado==OCUPADO)
+        {
+            contador=0;
+            contadorM=0;
+            contadorF=0;
+
+
+            for(j=0; j<tam; j++)
+            {
+                if(mascotas[j].idCliente==clientes[i].idCliente)
+                {
+                    contador++;
+                    if(mascotas[j].sexo=='f')
+                    {
+                        contadorF++;
+                    }
+                    else
+                    {
+                        contadorM++;
+                    }
+                }
+
+            }
+            if(contador== contadorF || contador== contadorM)
+            {
+                printf("%20s %20s %20s %8d %8c %20ld\n",clientes[i].nombre,clientes[i].apellido, clientes[i].localidad,clientes[i].edad, clientes[i].sexo,clientes[i].telefono);
+
+            }
+        }
+    }
+
+
+
+
+
+
+}
+
+
+
+
+

@@ -72,7 +72,7 @@ int main()
         break;
       case 6:
           mostrarMascota(tipoMascota, TAM_TIPO_MASCOTAS, mascotas,TAM_MASCOTAS, clientes, TAM_CLIENTES, raza, 6);
-          ret=ModificarMascota(mascotas, TAM_MASCOTAS);
+          ret=ModificarMascota(mascotas, TAM_MASCOTAS, clientes, TAM_CLIENTES);
             switch(ret)
             {
                 case 1:
@@ -157,10 +157,15 @@ int main()
       case 18:
         PromedioVaronesMujeres(clientes, TAM_CLIENTES);
         break;
+      case 19:
+          MostrarDueniosConMascotasDelMismoSexo(mascotas, TAM_MASCOTAS, clientes, TAM_CLIENTES);
+
+        break;
+
     }
     system ("pause");
     system("cls");
-   }while(opcion!=19);
+   }while(opcion!=20);
 
     return 0;
 }

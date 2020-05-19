@@ -32,7 +32,7 @@ char pais[50];
 void inicializarMascota(eMascota mascota[],int tam);
 void HardcodeoMascotas(eMascota mascotas[]);
 int BuscarLibreMascota(eMascota mascota[],int tam);
-int ModificarMascota(eMascota mascotas[], int tam);
+int BuscarMascotaPorId(eMascota mascotas[], int tam, int id);
 int EliminarMascota(eMascota mascotas[], int tam);
 void OrdenarMascotasPorTipo(eMascota mascotas[], int tam);
 void PromedioDeEdadMascotas(eMascota mascotas[], int tam);
