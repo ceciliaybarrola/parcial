@@ -24,7 +24,8 @@ int UserMenue(void)
     printf("16. El promedio de edad entre las mascotas \n");
     printf("17. El promedio de edad entre las mascotas, por tipo \n");
     printf("18. El promedio que tengo entre varones y mujeres de mis clientes\n");
-    printf("19. Salir\n");
+    printf("18. Clientes con mascotas del mismo sexo\n");
+    printf("20. Salir\n");
 
     option=GetInt("Ingrese una opcion: ","No es una opción valida, reingrese la opción: ",1,20);
 

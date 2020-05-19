@@ -80,8 +80,8 @@ int AltaMascota(eMascota mascotas[], int tamMascota, eClientes clientes[],int ta
     int ret=1;
     int id;
     int retId;
-    //int auxRaza;
-    //int flag=0;
+    int auxRaza;
+    int flag=0;
     int j;
     index=BuscarLibreMascota(mascotas, tamMascota);
 
@@ -118,20 +118,18 @@ int AltaMascota(eMascota mascotas[], int tamMascota, eClientes clientes[],int ta
             }
         }
 
-        mascotas[index].raza=GetUnsignedInt("Ingrese ID raza: ","ERROR! no es un valor disponible, reingrese: ");
-
-        /*do{
+        do{
                 auxRaza=GetUnsignedInt("Ingrese ID raza: ","ERROR! no es un valor disponible, reingrese: ");
                 for(j=0; j<tamRaza;j++)
                 {
                     if((raza[j].idTipo == mascotas[index].tipo) && (raza[j].idRaza == auxRaza))
                     {
-                        mascotas[index].raza==auxRaza;
-                        flag==1;
+                        mascotas[index].raza=auxRaza;
+                        flag=1;
                     }
                 }
 
-        }while(flag==0);*/
+        }while(flag==0);
 
 
         mascotas[index].edad=GetInt("Ingrese edad: ","ERROR! Reingrese edad: ", 0, 200);

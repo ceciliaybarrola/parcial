@@ -46,7 +46,7 @@
 	<string.h>
 	<stdlib.h>
 
-1589653403 source:c:\users\user1\desktop\parcial_laboratorio_parte_1\inputs.c
+1589894368 source:c:\users\user1\desktop\parcial_laboratorio_parte_1\inputs.c
 	"Inputs.h"
 
 1589893398 source:c:\users\user1\desktop\parcial_laboratorio_parte_1\main.c
@@ -66,6 +66,6 @@
 1589892338 source:c:\users\user1\desktop\parcial_laboratorio_parte_1\mascotas.c
 	"Mascotas.h"
 
-1589893867 source:c:\users\user1\desktop\parcial_laboratorio_parte_1\mascotas_clientes.c
+1589894811 source:c:\users\user1\desktop\parcial_laboratorio_parte_1\mascotas_clientes.c
 	"Mascotas_Clientes.h"
 
